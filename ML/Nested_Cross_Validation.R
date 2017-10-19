@@ -4,11 +4,17 @@
 # Model Selection
 #########################################
 #########################################
+# The following code shows how to perform 
+# model selection with nested cross validation
 
+# see Sebastian Raschka's page for details
+# https://sebastianraschka.com/faq/docs/evaluate-a-model.html
 #########################################
 # CROSS VALIDATION FOLDS
-   
+    
+# create list for model performance 
     oos_performance <- list()
+    
 #########################################
 # FUNCTION FOR MODEL PERFORMANCE
     
@@ -120,11 +126,6 @@
     #########################################
     # COMPUTE OUTER CV PERFORMANCE 
     # USING SELECTED PARAMETERS
-    
-    # set.seed(434)
-    # outer_folds  <- 3  
-    # idx_outer <- sample( rep( c(1: outer_folds) , length= nrow(lr_dataset)) , replace= FALSE)
-    
     # outer loop
     for ( outer_index in 1:outer_folds )
     {
